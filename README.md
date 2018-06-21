@@ -1,4 +1,4 @@
-# 📼 VCR [![Build Status](https://travis-ci.org/helpscout/vcr.svg?branch=master)](https://travis-ci.org/helpscout/vcr)
+# 📼 VCR [![npm version](https://badge.fury.io/js/%40helpscout%2Fvcr.svg)](https://badge.fury.io/js/%40helpscout%2Fvcr) [![Build Status](https://travis-ci.org/helpscout/vcr.svg?branch=master)](https://travis-ci.org/helpscout/vcr) [![Coverage Status](https://coveralls.io/repos/github/helpscout/vcr/badge.svg?branch=master)](https://coveralls.io/github/helpscout/vcr?branch=master)
 
 > A tiny React component to handle video embeds
 
