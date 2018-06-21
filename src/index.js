@@ -8,26 +8,29 @@ type Props = {
 }
 
 type Integration = {
-  destroy: () => void
+  destroy: () => void,
 }
 
 class VCR extends Component<Props> {
   static defaultProps = {
     cleanUpOnUnmount: false,
-    html: ''
+    html: '',
   }
   _node: HTMLElement
   integrations: Object
 
   constructor(props: Props) {
     super(props)
-    this.integrations = Object.keys(integrations).reduce((list: Object, key: string) => {
-      list[key.toLowerCase()] = new integrations[key]()
-      return list
-    }, {})
+    this.integrations = Object.keys(integrations).reduce(
+      (list: Object, key: string) => {
+        list[key.toLowerCase()] = new integrations[key]()
+        return list
+      },
+      {}
+    )
   }
 
-  shouldComponentUpdate (nextProps: Props) {
+  shouldComponentUpdate(nextProps: Props) {
     return this.props.html !== nextProps.html
   }
 
@@ -36,7 +39,7 @@ class VCR extends Component<Props> {
     this._eachIntegration((integration: Integration) => integration.destroy())
   }
 
-  _eachIntegration (callback: (args: any) => void) {
+  _eachIntegration(callback: (args: any) => void) {
     /* istanbul ignore next */
     if (!callback || typeof callback !== 'function') return
     Object.keys(this.integrations).forEach((key: string) => {
@@ -44,7 +47,7 @@ class VCR extends Component<Props> {
     })
   }
 
-  getSerializedHTML () {
+  getSerializedHTML() {
     const fragment = document.createElement('div')
     fragment.innerHTML = this.props.html
     this._eachIntegration(integration => integration.parse(fragment))
@@ -55,9 +58,7 @@ class VCR extends Component<Props> {
 
   render() {
     return (
-      <div
-        dangerouslySetInnerHTML={{__html: this.getSerializedHTML()}}
-      />
+      <div dangerouslySetInnerHTML={{ __html: this.getSerializedHTML() }} />
     )
   }
 }

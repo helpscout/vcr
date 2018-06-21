@@ -5,7 +5,8 @@ import { contains } from '../utilities.js'
 import type { VideoId } from './Integration'
 
 export const WISTIA_SCRIPT_ID = 'wistia_script'
-export const WISTIA_SCRIPT_SRC = 'https://fast.wistia.com/assets/external/E-v1.js'
+export const WISTIA_SCRIPT_SRC =
+  'https://fast.wistia.com/assets/external/E-v1.js'
 
 class Wistia extends Integration {
   destroy() {
@@ -41,8 +42,9 @@ class Wistia extends Integration {
   addIdFromNode(node: HTMLElement) {
     if (!node) return
     const classList = Array.from(node.classList)
-    const asyncId = classList
-      .filter(className => contains(className, 'wistia_async_'))[0]
+    const asyncId = classList.filter(className =>
+      contains(className, 'wistia_async_')
+    )[0]
 
     if (!asyncId) return
     const id = asyncId.replace('wistia_async_', '')
@@ -88,8 +90,12 @@ class Wistia extends Integration {
       this.nullifyJsonPScript(script)
     })
 
-    nodes.forEach(node => { this.addIdFromNode(node) })
-    frames.forEach(frame => { this.addIdFromFrame(frame) })
+    nodes.forEach(node => {
+      this.addIdFromNode(node)
+    })
+    frames.forEach(frame => {
+      this.addIdFromFrame(frame)
+    })
   }
 }
 

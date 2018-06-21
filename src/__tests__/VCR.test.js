@@ -28,11 +28,11 @@ describe('VCR', () => {
       const html = 'abc123'
       const props = {
         html,
-        greeting: 'hello'
+        greeting: 'hello',
       }
       const wrapper = shallow(<VCR {...props} />)
       const o = wrapper.instance()
-      const nextProps = {...props, greeting: 'hi'}
+      const nextProps = { ...props, greeting: 'hi' }
 
       expect(o.shouldComponentUpdate(nextProps)).toBe(false)
     })
@@ -41,11 +41,11 @@ describe('VCR', () => {
       const html = 'abc123'
       const props = {
         html,
-        greeting: 'hello'
+        greeting: 'hello',
       }
       const wrapper = shallow(<VCR {...props} />)
       const o = wrapper.instance()
-      const nextProps = {...props, html: 'new' }
+      const nextProps = { ...props, html: 'new' }
 
       expect(o.shouldComponentUpdate(nextProps)).toBe(true)
     })
@@ -54,7 +54,7 @@ describe('VCR', () => {
   describe('CleanUp', () => {
     test('Does not run cleanUp by default', () => {
       const spy = jest.fn()
-      const wrapper = mount(<VCR html='abc' />)
+      const wrapper = mount(<VCR html="abc" />)
       wrapper.instance().integrations.wistia.destroy = spy
 
       wrapper.unmount()
@@ -64,7 +64,7 @@ describe('VCR', () => {
 
     test('Runs cleanUp, if specified', () => {
       const spy = jest.fn()
-      const wrapper = mount(<VCR html='abc' cleanUpOnUnmount />)
+      const wrapper = mount(<VCR html="abc" cleanUpOnUnmount />)
       wrapper.instance().integrations.wistia.destroy = spy
 
       wrapper.unmount()

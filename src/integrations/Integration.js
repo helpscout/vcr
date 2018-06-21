@@ -4,7 +4,7 @@ export type VideoId = string
 class Integration {
   __ids: Set<string>
 
-  constructor () {
+  constructor() {
     this.__ids = new Set()
   }
 
@@ -37,8 +37,8 @@ class Integration {
   parse(node: HTMLElement) {}
 
   // Lifecycle actions
-  didAddId (id: VideoId) {}
-  didRemoveId (id: VideoId) {}
+  didAddId(id: VideoId) {}
+  didRemoveId(id: VideoId) {}
 }
 
 export default Integration
