@@ -21,6 +21,19 @@ describe('VCR', () => {
 
       expect(wrapper.html()).toContain(html)
     })
+
+    test('It does not render children', () => {
+      const wrapper = shallow(<VCR>Stuff</VCR>)
+
+      expect(wrapper.html()).not.toContain('Stuff')
+    })
+
+    test('It accepts props, like a standard div', () => {
+      const wrapper = shallow(<VCR className="hallo" id="yup" />)
+
+      expect(wrapper.html()).toContain('hallo')
+      expect(wrapper.html()).toContain('yup')
+    })
   })
 
   describe('Props', () => {

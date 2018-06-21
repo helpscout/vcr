@@ -57,8 +57,12 @@ class VCR extends Component<Props> {
   }
 
   render() {
+    const { children, cleanUpOnUnmount, html, ...rest } = this.props
     return (
-      <div dangerouslySetInnerHTML={{ __html: this.getSerializedHTML() }} />
+      <div
+        {...rest}
+        dangerouslySetInnerHTML={{ __html: this.getSerializedHTML() }}
+      />
     )
   }
 }
