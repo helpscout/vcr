@@ -1,4 +1,4 @@
-# 📼 VCR
+# 📼 VCR [![Build Status](https://travis-ci.org/helpscout/vcr.svg?branch=master)](https://travis-ci.org/helpscout/vcr)
 
 > A tiny React component to handle video embeds
 
