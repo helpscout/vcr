@@ -1,6 +1,6 @@
 {
   "presets": [
-    "./scripts/babel-preset-env",
+    "env",
     "react",
     "flow"
   ],
@@ -8,12 +8,5 @@
     "transform-class-properties",
     "transform-flow-strip-types",
     "transform-object-rest-spread"
-  ],
-  "env": {
-    "production": {
-      "plugins": [
-        "external-helpers"
-      ]
-    }
-  }
+  ]
 }
