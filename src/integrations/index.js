@@ -1,1 +1,1 @@
-export Wistia from './Wistia'
+export { default as Wistia } from './Wistia'

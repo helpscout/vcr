@@ -2,8 +2,9 @@
 
 > A tiny React component to handle video embeds
 
-- **Zero dependency**  - Ziltch.
-- **Wistia** rendering support
+- **Zero dependency** - Ziltch.
+- **Performant**
+- **Multiple** video rendering support (including Wistia!)
 
 ## 🔧 Installation
 
@@ -35,4 +36,7 @@ That's it! `VCR` will take care of parsing and rendering the video embeds as it 
 
 ## 🙌 Supported integrations
 
-* [Wistia](https://wistia.com/support/developers/player-api)
+- [HTML Video](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)
+- [Vimeo](https://help.vimeo.com/hc/en-us/articles/360000710167-Adjusting-the-size-of-the-embedded-player)
+- [Wistia](https://wistia.com/support/developers/player-api)
+- [YouTube](https://support.google.com/youtube/answer/171780?hl=en)

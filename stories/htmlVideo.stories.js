@@ -5,11 +5,11 @@ import * as fixtures from '../src/__tests__/fixtures'
 
 const stories = storiesOf('VCR', module)
 
-stories.add('Wistia', () => {
+stories.add('HTML: Video', () => {
   return (
     <div>
       Video:
-      <VCR html={fixtures.wistiaVideoJsonP} />
+      <VCR html={fixtures.htmlVideoTag} />
     </div>
   )
 })

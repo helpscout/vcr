@@ -23,3 +23,27 @@ _wq.push({ id: "abcde12345", onReady: function(video) {
 }});
 </script>
 `
+
+export const youtubeIFrameEmbed = `
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IKM-Z6CmbJ8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+`
+
+export const vimeoIFrameEmbed = `
+<iframe src="https://player.vimeo.com/video/102381170" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+`
+
+export const htmlVideoTag = `
+<!-- Simple video example -->
+<!-- 'Big Buck Bunny' licensed under CC 3.0 by the Blender foundation. Hosted by archive.org -->
+<!-- Poster from peach.blender.org -->
+<video controls
+    src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
+    poster="https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217"
+    width="620">
+
+Sorry, your browser doesn't support embedded videos,
+but don't worry, you can <a href="https://archive.org/details/BigBuckBunny_124">download it</a>
+and watch it with your favorite video player!
+
+</video>
+`
