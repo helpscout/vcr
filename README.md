@@ -20,11 +20,13 @@ Here's a quick example of how to (not-so) dangerously render video embeds with V
 import React from 'react'
 import VCR from '@helpscout/vcr'
 
+// Your markup which many contain fancy video embeds
 const html = `
 <script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
 <div class="wistia_embed wistia_async_abcde12345" style="width:640px;height:360px;"></div>
 `
 
+// Pass it into VCR via the html prop
 const App = props => (
   return (
     <VCR html={html} />
