@@ -36,7 +36,7 @@ const App = props => (
 
 That's it! `VCR` will take care of parsing and rendering the video embeds as it "dangerously" sets the innerHTML to render out the rest of your HTML.
 
-## 🙌 Supported integrations
+## 🙌 Supported Embeds
 
 - [HTML Video](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)
 - [Vimeo](https://help.vimeo.com/hc/en-us/articles/360000710167-Adjusting-the-size-of-the-embedded-player)
