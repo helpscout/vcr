@@ -47,3 +47,15 @@ and watch it with your favorite video player!
 
 </video>
 `
+
+export const hsBeaconEmbed = `
+<script src="https://fast.wistia.com/embed/medias/movjwx6t7l.jsonp" async="" type="text/javascript"></script>
+<script src="https://fast.wistia.com/assets/external/E-v1.js" async="" type="text/javascript"></script>
+<div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
+ <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
+  <div class="wistia_embed wistia_async_movjwx6t7l videoFoam=true" style="height:100%;width:100%">
+    &nbsp;
+  </div>
+ </div>
+</div>
+`
