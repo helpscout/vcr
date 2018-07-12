@@ -1,7 +1,7 @@
 {
   "name": "@helpscout/vcr",
   "version": "0.0.2",
-  "public": true,
+  "private": false,
   "description": "VCR: A tiny React component to handle video embeds",
   "main": "dist/index.js",
   "scripts": {
