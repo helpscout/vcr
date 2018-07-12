@@ -1,8 +1,19 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [📼 VCR \* \* \*](#-vcr---)
+  - [🔧 Installation](#-installation)
+  - [🕹 Usage](#%F0%9F%95%B9-usage)
+  - [🙌 Supported Embeds](#-supported-embeds)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # 📼 VCR [![npm version](https://badge.fury.io/js/%40helpscout%2Fvcr.svg)](https://badge.fury.io/js/%40helpscout%2Fvcr) [![Build Status](https://travis-ci.org/helpscout/vcr.svg?branch=master)](https://travis-ci.org/helpscout/vcr) [![Coverage Status](https://coveralls.io/repos/github/helpscout/vcr/badge.svg?branch=master)](https://coveralls.io/github/helpscout/vcr?branch=master)
 
 > A tiny React component to handle video embeds
 
-- **Zero dependency** - Ziltch.
+- **Tiny**, at less than 2KB Gzipped
 - **Performant**
 - **Multiple** video rendering support (including Wistia!)
 

@@ -19,7 +19,6 @@
     "storybook": "BABEL_ENV=develop start-storybook -p 8228",
     "coverage": "nyc report --temp-directory=coverage --reporter=text-lcov | coveralls",
     "prettier": "prettier \"src/**/*.js\" --write",
-    "pretty": "npm run prettier",
     "precommit": "zero precommit"
   },
   "author": "Jon Quach <hello@jonquach.com> (https://jonquach.com)",
@@ -45,10 +44,13 @@
     "pretty-quick": "1.6.0",
     "react": "^15",
     "react-dom": "^15",
+    "react-frame-component": "^1.1.0",
     "react-test-renderer": "^15"
   },
   "files": [
     "dist"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "@helpscout/react-utils": "0.0.1"
+  }
 }

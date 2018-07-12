@@ -34,7 +34,7 @@ class Integration {
    */
   /* istanbul ignore next */
   // Placeholder for class inheritance
-  parse(node: HTMLElement) {}
+  parse(props: {node: HTMLElement, document: Document}) {}
 
   // Lifecycle actions
   didAddId(id: VideoId) {}

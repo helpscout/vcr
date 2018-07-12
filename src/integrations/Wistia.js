@@ -1,14 +1,16 @@
 /*global _wq */
 // @flow
 import Integration from './Integration'
-import { contains } from '../utilities.js'
-import type { VideoId } from './Integration'
+import {contains} from '../utilities'
+import type {VideoId} from './Integration'
 
 export const WISTIA_SCRIPT_ID = 'wistia_script'
 export const WISTIA_SCRIPT_SRC =
   'https://fast.wistia.com/assets/external/E-v1.js'
 
 class Wistia extends Integration {
+  doc: Document
+
   destroy() {
     const script = this.getInjectScript()
     /* istanbul ignore next */
@@ -17,33 +19,44 @@ class Wistia extends Integration {
     script.parentNode.removeChild(script)
   }
 
-  getInjectScript(): ?HTMLElement {
-    return document.getElementById(WISTIA_SCRIPT_ID)
+  setDocument = (doc: ?Document) => {
+    this.doc = doc || document
+  }
+
+  getDocument = (): Document => {
+    return this.doc || document
+  }
+
+  getInjectScript = (): ?HTMLElement => {
+    return this.getDocument().getElementById(WISTIA_SCRIPT_ID)
   }
 
   injectScript() {
     if (this.getInjectScript()) return
-    const wistiaScript = document.createElement('script')
+    const doc = this.getDocument()
+    const wistiaScript = doc.createElement('script')
     wistiaScript.id = WISTIA_SCRIPT_ID
     wistiaScript.type = 'text/javascript'
     wistiaScript.src = WISTIA_SCRIPT_SRC
     wistiaScript.async = true
     // $FlowFixMe
-    document.body.appendChild(wistiaScript)
+    doc.body.appendChild(wistiaScript)
   }
 
   didAddId(id: VideoId) {
     // $FlowFixMe
     window._wq = window._wq || []
+    /* istanbul ignore next */
+    const noop = () => {}
     // $FlowFixMe
-    _wq.push({ id: id })
+    _wq.push({id: id, onReady: noop})
   }
 
   addIdFromNode(node: HTMLElement) {
     if (!node) return
     const classList = Array.from(node.classList)
     const asyncId = classList.filter(className =>
-      contains(className, 'wistia_async_')
+      contains(className, 'wistia_async_'),
     )[0]
 
     if (!asyncId) return
@@ -71,12 +84,15 @@ class Wistia extends Integration {
     script.parentNode.removeChild(script)
   }
 
-  parse(node: HTMLElement) {
+  parse(props: {node: HTMLElement, document: Document}) {
+    const {node, document: doc} = props
+    this.setDocument(doc)
+
     const scripts = Array.from(node.querySelectorAll('script')).filter(
       script => {
         // $FlowFixMe
         return contains(script.src, 'wistia.com')
-      }
+      },
     )
     const nodes = Array.from(node.querySelectorAll('div.wistia_embed'))
     const frames = Array.from(node.querySelectorAll('iframe.wistia_embed'))

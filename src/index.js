@@ -1,9 +1,11 @@
 // @flow
-import React, { Component } from 'react'
+import React, {Component} from 'react'
+import {getDocumentFromReactComponent} from './utilities'
 import * as integrations from './integrations'
 
 type Props = {
   cleanUpOnUnmount: boolean,
+  children?: any,
   html: string,
 }
 
@@ -26,7 +28,7 @@ class VCR extends Component<Props> {
         list[key.toLowerCase()] = new integrations[key]()
         return list
       },
-      {}
+      {},
     )
   }
 
@@ -47,21 +49,30 @@ class VCR extends Component<Props> {
     })
   }
 
+  getDocument = () => {
+    return getDocumentFromReactComponent(this)
+  }
+
   getSerializedHTML() {
     const fragment = document.createElement('div')
     fragment.innerHTML = this.props.html
-    this._eachIntegration(integration => integration.parse(fragment))
+    this._eachIntegration(integration =>
+      integration.parse({
+        node: fragment,
+        document: this.getDocument(),
+      }),
+    )
 
     // Mutated innerHTML after integration parse cycles
     return fragment.innerHTML
   }
 
   render() {
-    const { children, cleanUpOnUnmount, html, ...rest } = this.props
+    const {children, cleanUpOnUnmount, html, ...rest} = this.props
     return (
       <div
         {...rest}
-        dangerouslySetInnerHTML={{ __html: this.getSerializedHTML() }}
+        dangerouslySetInnerHTML={{__html: this.getSerializedHTML()}}
       />
     )
   }
