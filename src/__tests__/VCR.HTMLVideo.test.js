@@ -1,8 +1,8 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import {shallow} from 'enzyme'
 import VCR from '../index'
-import * as fixtures from './fixtures'
-import { cleanUp } from '../testHelpers'
+import * as fixtures from '../fixtures/embed'
+import {cleanUp} from '../testHelpers'
 
 describe('VCR: HTML VIdeo', () => {
   afterEach(cleanUp)

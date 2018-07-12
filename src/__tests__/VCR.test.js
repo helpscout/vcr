@@ -1,8 +1,8 @@
 import React from 'react'
-import { shallow, mount } from 'enzyme'
+import {shallow, mount} from 'enzyme'
 import VCR from '../index'
-import * as fixtures from './fixtures'
-import { cleanUp } from '../testHelpers'
+import * as fixtures from '../fixtures/embed'
+import {cleanUp} from '../testHelpers'
 
 describe('VCR', () => {
   afterEach(cleanUp)
@@ -45,7 +45,7 @@ describe('VCR', () => {
       }
       const wrapper = shallow(<VCR {...props} />)
       const o = wrapper.instance()
-      const nextProps = { ...props, greeting: 'hi' }
+      const nextProps = {...props, greeting: 'hi'}
 
       expect(o.shouldComponentUpdate(nextProps)).toBe(false)
     })
@@ -58,7 +58,7 @@ describe('VCR', () => {
       }
       const wrapper = shallow(<VCR {...props} />)
       const o = wrapper.instance()
-      const nextProps = { ...props, html: 'new' }
+      const nextProps = {...props, html: 'new'}
 
       expect(o.shouldComponentUpdate(nextProps)).toBe(true)
     })

@@ -1,9 +1,9 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import {shallow} from 'enzyme'
 import VCR from '../index'
-import { WISTIA_SCRIPT_SRC } from '../integrations/Wistia'
-import * as fixtures from './fixtures'
-import { cleanUp } from '../testHelpers'
+import {WISTIA_SCRIPT_SRC} from '../integrations/Wistia'
+import * as fixtures from '../fixtures/embed'
+import {cleanUp} from '../testHelpers'
 
 describe('VCR: Wistia', () => {
   afterEach(cleanUp)
@@ -55,7 +55,7 @@ describe('VCR: Wistia', () => {
 
   test('Adds the Wistia script to document.body', () => {
     const html = fixtures.wistiaVideoJsonP
-    const wrapper = shallow(<VCR html={html} />)
+    shallow(<VCR html={html} />)
 
     expect(document.body.innerHTML).toContain(WISTIA_SCRIPT_SRC)
   })

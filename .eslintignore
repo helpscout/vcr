@@ -1,3 +1,6 @@
-/node_modules
-/dist
-*.json
+src/typings/**/*
+stories
+docs
+dist
+coverage
+other
