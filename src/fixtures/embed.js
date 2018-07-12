@@ -49,13 +49,34 @@ and watch it with your favorite video player!
 `
 
 export const hsBeaconEmbed = `
-<script src="https://fast.wistia.com/embed/medias/movjwx6t7l.jsonp" async="" type="text/javascript"></script>
-<script src="https://fast.wistia.com/assets/external/E-v1.js" async="" type="text/javascript"></script>
-<div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
- <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
+<h3>Take a look around...</h3> 
+<div>
+  Get a guided tour of Help Scout and all it’s features in one of our video tours!&nbsp; 
+</div>
+<h3>Introduction to Help Scout: Help Desk</h3> 
+<div>
+  The introduction to Help Scout video shows everything you need to learn the ropes of our Help Desk in just over 10 minutes. Learn how Mailboxes, Folders, and Conversations work, and how to use Help Scout to collaborate on customer support with your team. 
+</div>
+<script src="https://fast.wistia.com/embed/medias/movjwx6t7l.jsonp" async type="text/javascript"></script>
+<script src="https://fast.wistia.com/assets/external/E-v1.js" async type="text/javascript"></script> 
+<div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"> 
+ <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"> 
   <div class="wistia_embed wistia_async_movjwx6t7l videoFoam=true" style="height:100%;width:100%">
-    &nbsp;
+    &nbsp; 
   </div>
  </div>
 </div>
+<p> Need a little more guidance? Get to know the ins and outs of Help Scout in one of our weekly live demos! Ask our resident customer champion any questions in person to see if Help Scout is right for you. Sign up here:&nbsp; <a href="https://www.helpscout.net/classes/" target="_blank">Get a demo</a>.</p>
+<h3>What’s up Docs?</h3>
+<p> Set up your knowledge base and set you customers up for success! Take a tour of Docs. Learn about the Docs settings, structure, and how to create new articles, categories, and collections.</p>
+<script src="https://fast.wistia.com/embed/medias/imahbku8uy.jsonp" async type="text/javascript"></script>
+<script src="https://fast.wistia.com/assets/external/E-v1.js" async type="text/javascript"></script>
+<div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
+ <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
+  <div class="wistia_embed wistia_async_imahbku8uy videoFoam=true" style="height:100%;width:100%">
+   &nbsp;
+  </div> 
+ </div>
+</div>
+<p> Still have questions? Get in touch!&nbsp; <a href="https://www.helpscout.net/contact/" target="_blank">Reach out to our help team</a> and get answers quickly.</p>
 `

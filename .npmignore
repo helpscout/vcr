@@ -12,3 +12,4 @@ src
 .prettierrc.yml
 .travis.yml
 rollup.config.js
+src/fixtures
