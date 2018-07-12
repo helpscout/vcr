@@ -1,7 +1,7 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
+import {storiesOf} from '@storybook/react'
 import VCR from '../src/index'
-import * as fixtures from '../src/__tests__/fixtures'
+import * as fixtures from '../src/fixtures/embed'
 
 const stories = storiesOf('VCR', module)
 
