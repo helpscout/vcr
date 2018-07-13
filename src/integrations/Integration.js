@@ -1,11 +1,12 @@
 // @flow
+import {SimpleSet} from '../utilities'
 export type VideoId = string
 
 class Integration {
   __ids: Set<string>
 
   constructor() {
-    this.__ids = new Set()
+    this.__ids = new SimpleSet()
   }
 
   // Actions
@@ -20,7 +21,7 @@ class Integration {
   }
 
   getIds(): Object {
-    return this.__ids
+    return this.__ids.getItems()
   }
 
   /* istanbul ignore next */
