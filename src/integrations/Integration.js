@@ -3,7 +3,7 @@ import {SimpleSet} from '../utilities'
 export type VideoId = string
 
 class Integration {
-  __ids: Set<string>
+  __ids: Object
 
   constructor() {
     this.__ids = new SimpleSet()

@@ -1,7 +1,7 @@
 /*global _wq */
 // @flow
 import Integration from './Integration'
-import {contains} from '../utilities'
+import {arrayFrom, contains} from '../utilities'
 import type {VideoId} from './Integration'
 
 export const WISTIA_SCRIPT_ID = 'wistia_script'
@@ -54,7 +54,7 @@ class Wistia extends Integration {
 
   addIdFromNode(node: HTMLElement) {
     if (!node) return
-    const classList = Array.from(node.classList)
+    const classList = arrayFrom(node.classList)
     const asyncId = classList.filter(className =>
       contains(className, 'wistia_async_'),
     )[0]
@@ -88,14 +88,14 @@ class Wistia extends Integration {
     const {node, document: doc} = props
     this.setDocument(doc)
 
-    const scripts = Array.from(node.querySelectorAll('script')).filter(
+    const scripts = arrayFrom(node.querySelectorAll('script')).filter(
       script => {
         // $FlowFixMe
         return contains(script.src, 'wistia.com')
       },
     )
-    const nodes = Array.from(node.querySelectorAll('div.wistia_embed'))
-    const frames = Array.from(node.querySelectorAll('iframe.wistia_embed'))
+    const nodes = arrayFrom(node.querySelectorAll('div.wistia_embed'))
+    const frames = arrayFrom(node.querySelectorAll('iframe.wistia_embed'))
 
     if (scripts.length) {
       this.injectScript()
